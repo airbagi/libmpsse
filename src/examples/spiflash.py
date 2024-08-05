@@ -16,13 +16,13 @@ class SPIFlash(object):
 	BLOCK_SIZE = 256	# SPI block size, writes must be done in multiples of this size
 	PP_PERIOD = .025	# Page program time, in seconds
 
-	def __init__(self, speed=FIFTEEN_MHZ):
+	def __init__(self, speed=ONE_HUNDRED_KHZ):
 
 		# Sanity check on the specified clock speed
 		if not speed:
-			speed = FIFTEEN_MHZ
+			speed = ONE_HUNDRED_KHZ
 
-		self.flash = MPSSE(SPI0, speed, MSB)
+		self.flash = MPSSE() #SPI0, speed, MSB)
 		self.chip = self.flash.GetDescription()
 		self.speed = self.flash.GetClock()
 		self._init_gpio()
