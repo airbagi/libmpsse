@@ -1,0 +1,10 @@
+*.so
+*.log
+*.a
+*.o
+pylibmpsse.py
+Makefile
+mppse_wrap.*
+config.*
+*.pyc
+
